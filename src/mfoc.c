@@ -823,7 +823,7 @@ int find_exploit_sector(mftag t)
     fprintf(stdout, "\nWe have all sectors encrypted with the default keys..\n\n");
     return -1;
   }
-  for (i = 7; i < t.num_sectors; i++) {
+  for (i = 0; i < t.num_sectors; i++) {
     if ((t.sectors[i].foundKeyA) || (t.sectors[i].foundKeyB)) {
       fprintf(stdout, "\n\nUsing sector %02d as an exploit sector\n", i);
       return i;
